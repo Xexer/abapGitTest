@@ -9,6 +9,7 @@ CLASS zcl_git_first_object DEFINITION
     METHODS do_something .
   PROTECTED SECTION.
   PRIVATE SECTION.
+    METHODS new_method_logic.
 ENDCLASS.
 
 
@@ -23,5 +24,12 @@ CLASS zcl_git_first_object IMPLEMENTATION.
     WRITE 'Hello world'.
   ENDMETHOD.
 
+
+  METHOD new_method_logic.
+    DATA ld_integer TYPE i.
+
+    ld_integer = 12 * 12.
+    WRITE ld_integer.
+  ENDMETHOD.
 
 ENDCLASS.
