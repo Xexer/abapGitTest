@@ -17,6 +17,8 @@ ENDCLASS.
 CLASS zcl_git_first_object IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     out->write( 'Preparing new release' ).
+
+    do_something( ).
   ENDMETHOD.
 
 
