@@ -1,21 +1,27 @@
-class ZCL_GIT_FIRST_OBJECT definition
-  public
-  final
-  create public .
+CLASS zcl_git_first_object DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
+    INTERFACES: if_oo_adt_classrun.
 
-  methods DO_SOMETHING .
-protected section.
-private section.
+    METHODS do_something .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS ZCL_GIT_FIRST_OBJECT IMPLEMENTATION.
+CLASS zcl_git_first_object IMPLEMENTATION.
+  METHOD if_oo_adt_classrun~main.
+    out->write( 'Preparing new release' ).
+  ENDMETHOD.
 
 
   METHOD do_something.
     WRITE 'Hello world'.
   ENDMETHOD.
+
+
 ENDCLASS.
