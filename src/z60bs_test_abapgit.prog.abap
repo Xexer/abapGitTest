@@ -18,6 +18,7 @@ CLASS lcl_prog IMPLEMENTATION.
 *** Start der Verarbeitung
   METHOD start.
     WRITE 'Report for Release 1 started ...'.
+    WRITE 'Release 2 integrated ...'.
   ENDMETHOD.
 ENDCLASS.
 
