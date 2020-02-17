@@ -3,6 +3,12 @@
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
+*& ÄNDERUNG / MODIFIKATION
+*& User:          Björn Schulz, A130A5D
+*& Datum:         17.02.2020
+*& Ticket/Kürzel: xxxxxxxxxx
+*& Beschreibung:  - Going more dynamic
+*&---------------------------------------------------------------------*
 REPORT z60bs_test_abapgit.
 
 *----------------------------------------------------------------------*
@@ -10,15 +16,18 @@ REPORT z60bs_test_abapgit.
 *----------------------------------------------------------------------*
 CLASS lcl_prog DEFINITION.
   PUBLIC SECTION.
-    CLASS-METHODS:
+    METHODS:
       start.
   PRIVATE SECTION.
+
 ENDCLASS.
 CLASS lcl_prog IMPLEMENTATION.
-*** Start der Verarbeitung
   METHOD start.
     WRITE 'Report for Release 1 started ...'.
     WRITE 'Release 2 integrated ...'.
+
+    DATA(lo_git) = NEW zcl_git_first_object( ).
+    lo_git->do_something( ).
   ENDMETHOD.
 ENDCLASS.
 
@@ -26,4 +35,5 @@ ENDCLASS.
 *--- Ablauflogik
 *----------------------------------------------------------------------*
 START-OF-SELECTION.
-  lcl_prog=>start( ).
+  DATA(go_app) = NEW lcl_prog( ).
+  go_app->start( ).
