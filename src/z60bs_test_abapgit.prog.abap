@@ -19,6 +19,8 @@ CLASS lcl_prog DEFINITION.
     METHODS:
       start.
   PRIVATE SECTION.
+    METHODS
+      do_some_more_stuff_for_me.
 
 ENDCLASS.
 CLASS lcl_prog IMPLEMENTATION.
@@ -28,6 +30,10 @@ CLASS lcl_prog IMPLEMENTATION.
 
     DATA(lo_git) = NEW zcl_git_first_object( ).
     lo_git->do_something( ).
+  ENDMETHOD.
+
+  METHOD do_some_more_stuff_for_me.
+
   ENDMETHOD.
 ENDCLASS.
 
